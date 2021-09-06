@@ -7,7 +7,7 @@
         return tag
         }
 pipeline{
-	agent {any}
+       agent any
        environment{
 	    Docker_tag = getDockerTag()
         }
