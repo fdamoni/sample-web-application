@@ -7,7 +7,7 @@
         return tag
         }
 pipeline{
-      agent any
+       agent any
        environment{
 	    Docker_tag = getDockerTag()
         }
@@ -17,10 +17,7 @@ pipeline{
 	      description: 'based on selection jenkins will run resepective maven command')
     	}
         stages{
-              stage('build'){
-		      
-		      agent any
-           	 	}		      
+              stage('build')	      
                   steps{
 			  build ("${mvnaction}")
                	     }  
