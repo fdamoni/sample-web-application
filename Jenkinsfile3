@@ -7,7 +7,7 @@
         return tag
         }
 pipeline{
-       agent any
+	agent {any}
        environment{
 	    Docker_tag = getDockerTag()
         }
@@ -21,7 +21,7 @@ pipeline{
                   steps{
 			  build ("${mvnaction}")
                	     }  
-                 }	
+                 	
 		stage ('docker build and push') {	
 		   when {
 				expression { params.mvnaction == 'Install' }
